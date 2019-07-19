@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Corn_yu">
 <meta property="og:description" content="Device Context 和 BeginPaint EndPaint设备环境（DC）在Windows中，一切能在显示器上看到的都是图形，不但包括点、线、矩形、圆等，也包括文字、字体。对用户来说文字和图片是不同的，但它们在本质上都是图形，都需要在显示器上画出来。这也是Windows被称作图形操作系统的原因。 Windows不允许我们直接访问硬件，如键盘、显示器、打印机等，在与这些硬件通信前要获得">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-19T07:57:34.283Z">
+<meta property="og:updated_time" content="2019-07-19T11:18:23.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Device Context">
 <meta name="twitter:description" content="Device Context 和 BeginPaint EndPaint设备环境（DC）在Windows中，一切能在显示器上看到的都是图形，不但包括点、线、矩形、圆等，也包括文字、字体。对用户来说文字和图片是不同的，但它们在本质上都是图形，都需要在显示器上画出来。这也是Windows被称作图形操作系统的原因。 Windows不允许我们直接访问硬件，如键盘、显示器、打印机等，在与这些硬件通信前要获得">
@@ -178,7 +178,7 @@
 </blockquote>
 <p>所谓设备环境，就是与当前硬件设备有关的各种信息，它是硬件设备的抽象。也就是说，设备环境就代表当前的硬件。</p>
 <p>与文字输出、图形绘制有关的函数，在使用时大都需要传入一个参数，就是设备环境句柄。获取设备环境句柄有多种方式，常用的是 BeginPaint 函数。绘图完成后，还要释放句柄，使用 EndPaint 函数。</p>
-<pre><code></code></pre><h1 id="BeginPaint-和-EndPaint-函数"><a href="#BeginPaint-和-EndPaint-函数" class="headerlink" title="BeginPaint 和 EndPaint 函数"></a>BeginPaint 和 EndPaint 函数</h1><p>当发生 WM_PAINT 事件时，应用程序开始绘图。绘图之前需要先调用 BeginPai<br>绘图结束后，也需要调用 EndPaint 函数通知Windows，告诉它绘图结束了，你可以继续后面的工作了。nt 函数通知 Windows，告诉它当前程序需要使用显示器，你安排一下吧。BeginPaint 函数执行完毕就返回设备环境句柄，接下来就可以使用 GDI 函数绘图了。</p>
+<h1 id="BeginPaint-和-EndPaint-函数"><a href="#BeginPaint-和-EndPaint-函数" class="headerlink" title="BeginPaint 和 EndPaint 函数"></a>BeginPaint 和 EndPaint 函数</h1><p>当发生 WM_PAINT 事件时，应用程序开始绘图。绘图之前需要先调用 BeginPai<br>绘图结束后，也需要调用 EndPaint 函数通知Windows，告诉它绘图结束了，你可以继续后面的工作了。nt 函数通知 Windows，告诉它当前程序需要使用显示器，你安排一下吧。BeginPaint 函数执行完毕就返回设备环境句柄，接下来就可以使用 GDI 函数绘图了。</p>
 
       
 
