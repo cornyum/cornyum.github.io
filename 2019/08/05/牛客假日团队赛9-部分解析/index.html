@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Corn_yu">
 <meta property="og:description" content="A-成绩最大题目链接 题意&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;给定一个数字字符串，把字符串分成K+1个数，使这些数乘积最大。 分析本题最佳解法应该是区间dp但本蒟蒻不会dp。只能暴力dfs了。在串中插入*其性质和排列类似。可以参考蓝书P15递归实现排列型枚举。对于在第i个位置插入*分成i之前的为一段，及i和i之后一段。  需要注意在数字相连时的边界情况。  AC代码1234567891">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-05T10:38:52.419Z">
+<meta property="og:updated_time" content="2019-08-05T10:53:14.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛客假日团队赛9-部分解析">
 <meta name="twitter:description" content="A-成绩最大题目链接 题意&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;给定一个数字字符串，把字符串分成K+1个数，使这些数乘积最大。 分析本题最佳解法应该是区间dp但本蒟蒻不会dp。只能暴力dfs了。在串中插入*其性质和排列类似。可以参考蓝书P15递归实现排列型枚举。对于在第i个位置插入*分成i之前的为一段，及i和i之后一段。  需要注意在数字相连时的边界情况。  AC代码1234567891">
@@ -193,7 +193,7 @@
 
 <h1 id="I-旅行家的预算"><a href="#I-旅行家的预算" class="headerlink" title="I-旅行家的预算"></a>I-旅行家的预算</h1><p><a href="https://ac.nowcoder.com/acm/contest/1071/I" target="_blank" rel="noopener">题目链接</a></p>
 <h2 id="分析-3"><a href="#分析-3" class="headerlink" title="分析"></a>分析</h2><p>一道操作比较繁琐的<code>贪心+模拟</code>。可以转换区间贪心。加入起点与终点共<code>n+2</code>个站点。<br>若当前在点<code>i</code>则需要考虑若在当前站点加多少油可以到达下一个便宜的站点。如果无法到达下一个便宜的站，那就需要加满油。</p>
-<p>复杂度<code>O(N)</code> </p>
+<p>复杂度<code>O(N^2)</code> </p>
 <blockquote>
 <p>本题的N超级小。。</p>
 </blockquote>
