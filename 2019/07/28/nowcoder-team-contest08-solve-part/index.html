@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 位运算 | Corn_yu</title>
+  <title>nowcoder_team_contest08_solve_part | Corn_yu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="yuming&apos;s bolg">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Corn_yu">
-<meta property="og:url" content="http://yoursite.com/tags/位运算/index.html">
+  <meta name="description" content="比赛总结暑期第一次打牛客团队赛，居然运气不错的就中奖了。不过这次的题总体都不难，差1题就可以AK了呢。还是来总结下吧，先附上算法大纲。  easy：B(模拟)、C(高精度)、G(排序)、H(BF)、I(规律题)、J(简单DP)、L(打表BF) mid：K(floyd传递闭包)、D(复杂模拟)、F(最短路+二分) hard：E(二分+并查集)、A(树形DP求最小支配集合)  其中蒟蒻的我写了BCGH">
+<meta name="keywords" content="牛客,ACM,综合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nowcoder_team_contest08_solve_part">
+<meta property="og:url" content="http://yoursite.com/2019/07/28/nowcoder-team-contest08-solve-part/index.html">
 <meta property="og:site_name" content="Corn_yu">
-<meta property="og:description" content="yuming&apos;s bolg">
+<meta property="og:description" content="比赛总结暑期第一次打牛客团队赛，居然运气不错的就中奖了。不过这次的题总体都不难，差1题就可以AK了呢。还是来总结下吧，先附上算法大纲。  easy：B(模拟)、C(高精度)、G(排序)、H(BF)、I(规律题)、J(简单DP)、L(打表BF) mid：K(floyd传递闭包)、D(复杂模拟)、F(最短路+二分) hard：E(二分+并查集)、A(树形DP求最小支配集合)  其中蒟蒻的我写了BCGH">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-05T18:39:49.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Corn_yu">
-<meta name="twitter:description" content="yuming&apos;s bolg">
+<meta name="twitter:title" content="nowcoder_team_contest08_solve_part">
+<meta name="twitter:description" content="比赛总结暑期第一次打牛客团队赛，居然运气不错的就中奖了。不过这次的题总体都不难，差1题就可以AK了呢。还是来总结下吧，先附上算法大纲。  easy：B(模拟)、C(高精度)、G(排序)、H(BF)、I(规律题)、J(简单DP)、L(打表BF) mid：K(floyd传递闭包)、D(复杂模拟)、F(最短路+二分) hard：E(二分+并查集)、A(树形DP求最小支配集合)  其中蒟蒻的我写了BCGH">
   
     <link rel="alternative" href="/atom.xml" title="Corn_yu" type="application/atom+xml">
   
@@ -143,56 +145,123 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-nowcoder-team-contest08-solve-part" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/19/POJ-2777-Count-Color-线段树-二进制位运算/" class="archive-article-date">
-  	<time datetime="2019-07-19T11:38:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/19/POJ-2777-Count-Color-线段树-二进制位运算/">POJ 2777 Count Color(线段树+二进制位运算)</a>
+    <h1 class="article-title" itemprop="name">
+      nowcoder_team_contest08_solve_part
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/07/28/nowcoder-team-contest08-solve-part/" class="archive-article-date">
+  	<time datetime="2019-07-28T13:50:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="比赛总结"><a href="#比赛总结" class="headerlink" title="比赛总结"></a>比赛总结</h1><p>暑期第一次打牛客团队赛，居然运气不错的就中奖了。不过这次的题总体都不难，差1题就可以AK了呢。<br>还是来总结下吧，先附上算法大纲。</p>
+<ul>
+<li>easy：B(模拟)、C(高精度)、G(排序)、H(BF)、I(规律题)、J(简单DP)、L(打表BF)</li>
+<li>mid：K(floyd传递闭包)、D(复杂模拟)、F(最短路+二分)</li>
+<li>hard：E(二分+并查集)、A(树形DP求最小支配集合)</li>
+</ul>
+<p>其中蒟蒻的我写了BCGHIF(果然我只配写简单题)</p>
+<h1 id="B-iCow"><a href="#B-iCow" class="headerlink" title="B-iCow"></a>B-iCow</h1><p><a href="https://ac.nowcoder.com/acm/contest/1069/B" target="_blank" rel="noopener">题目传送门</a></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>&emsp;&emsp;有N(1 &lt;= N &lt;= 1,000)首歌曲，按照1-N编号。</p>
+<ul>
+<li>第i首曲子有一个初始权值R_i(1 &lt;= R_i &lt;= 10,000)。</li>
+<li>当一首曲子播放完毕，接下来播放的将是所有曲子中权值最大的那首（如果有两首或多首曲子的权值相同，那么这些曲子中编号最小的那首会被选中）。</li>
+<li>一首曲子在播放结束后，它的权值会被平均地分给其他N-1首曲子，它本身的权值清零。</li>
+</ul>
+<p>&emsp;&emsp;如果一首曲子的权值无法被平均分配（也就是说，无法被N-1整除），那么被N-1除的余数部分将会以1为单位，顺次分配给排名靠前的曲子（也就是说，顺序为曲目1、曲目2…依次下去。当然，刚播放过的那首曲子需要被跳过），直到多出的部分被分配完。<br>在选定的下一首曲子播放完毕后，这个算法再次被执行，调整曲子的权值，并选出再接下来播放的曲目。</p>
+<p>&emsp;&emsp;请你计算一下，按FJ的算法，最先播放的T(1 &lt;= T &lt;= 1000)首曲子分别是哪些。</p>
+<a id="more"></a>
+
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>&emsp;&emsp;数据不大，简单模拟题。</p>
+<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAST_IO std::ios::sync_with_stdio(false),std::cin.tie(0),std::cout.tie(0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pause system(<span class="meta-string">"pause"</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> UINT;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> maxn = <span class="number">1000</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    FAST_IO;</span><br><span class="line">    <span class="keyword">int</span> n, t;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; t; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> pos = max_element(a + <span class="number">1</span>, a + <span class="number">1</span> + n) - a;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; pos &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">int</span> x = a[pos] % (n - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> s = a[pos] / (n - <span class="number">1</span>);</span><br><span class="line">        a[pos]= <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == pos) <span class="keyword">continue</span>;</span><br><span class="line">            a[i] += s;</span><br><span class="line">            <span class="keyword">if</span> (x) &#123;</span><br><span class="line">                a[i]++;</span><br><span class="line">                x--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// pause;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="C-阶乘之和"><a href="#C-阶乘之和" class="headerlink" title="C-阶乘之和"></a>C-阶乘之和</h1><p><a href="https://ac.nowcoder.com/acm/contest/1069/C" target="_blank" rel="noopener">题目传送门</a></p>
+<h2 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h2><p>&emsp;&emsp;python大法真好</p>
+<h2 id="AC代码-1"><a href="#AC代码-1" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">n = int(input())</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fact</span><span class="params">(x)</span>:</span></span><br><span class="line">    s = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, x + <span class="number">1</span>):</span><br><span class="line">        s *= i</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line">sum = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">    sum += fact(i)</span><br><span class="line"><span class="keyword">if</span> sum == <span class="number">0</span>:</span><br><span class="line">    sum += <span class="number">1</span></span><br><span class="line">print(sum)</span><br></pre></td></tr></table></figure>
+
+<h1 id="G-Election-Time"><a href="#G-Election-Time" class="headerlink" title="G-Election Time"></a>G-Election Time</h1><p><a href="https://ac.nowcoder.com/acm/contest/1069/G" target="_blank" rel="noopener">题目传送门</a></p>
+<h2 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h2><p>&emsp;&emsp;一场比赛，规则有两轮，再第一轮中选出前k个牛，再在这k只牛中选取第二轮中票数最多的牛，输出它的编号。</p>
+<h2 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h2><p>&emsp;&emsp;进行两次排序就行。</p>
+<h2 id="AC代码-2"><a href="#AC代码-2" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAST_IO std::ios::sync_with_stdio(false),std::cin.tie(0),std::cout.tie(0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pause system(<span class="meta-string">"pause"</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> UINT;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll, ll&gt; pll;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> maxn = <span class="number">50000</span> + <span class="number">10</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    ll a, b;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">&#125;;</span><br><span class="line">node a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    FAST_IO;</span><br><span class="line">    <span class="keyword">int</span> n, k;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i].a &gt;&gt; a[i].b;</span><br><span class="line">        a[i].x = i; </span><br><span class="line">    &#125;</span><br><span class="line">    sort(a + <span class="number">1</span> , a + <span class="number">1</span> + k, [](<span class="keyword">const</span> node &amp;x, <span class="keyword">const</span> node &amp;y)&#123;</span><br><span class="line">        <span class="keyword">return</span> x.a &gt; y.a;</span><br><span class="line">    &#125;);</span><br><span class="line">    sort(a + <span class="number">1</span> , a + <span class="number">1</span> + k, [](<span class="keyword">const</span> node &amp;x, <span class="keyword">const</span> node &amp;y)&#123;</span><br><span class="line">        <span class="keyword">return</span> x.b &gt; y.b;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a[<span class="number">1</span>].x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// pause;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="H-Costume-Party"><a href="#H-Costume-Party" class="headerlink" title="H-Costume Party"></a>H-Costume Party</h1><p><a href="https://ac.nowcoder.com/acm/contest/1069/H" target="_blank" rel="noopener">题目传送门</a></p>
+<h2 id="分析-3"><a href="#分析-3" class="headerlink" title="分析"></a>分析</h2><p>真的暴力就行了emmm.</p>
+<h2 id="AC代码-3"><a href="#AC代码-3" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAST_IO std::ios::sync_with_stdio(false),std::cin.tie(0),std::cout.tie(0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pause system(<span class="meta-string">"pause"</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> UINT;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll, ll&gt; pll;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> maxn = <span class="number">50000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    FAST_IO;</span><br><span class="line">    <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n, s;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; s;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n;i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>;j &lt; n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i] + a[j] &lt;= s) </span><br><span class="line">                ++num;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; num &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// pause;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="I-Cantor表"><a href="#I-Cantor表" class="headerlink" title="I-Cantor表"></a>I-Cantor表</h1><p><a href="https://ac.nowcoder.com/acm/contest/1069/I" target="_blank" rel="noopener">题目传送门</a></p>
+<h2 id="分析-4"><a href="#分析-4" class="headerlink" title="分析"></a>分析</h2><p>数表提示我们按照斜线分类。第1条斜线有1个数，第2条有2个数，第3条有3个数……第k条有k个数。这样，前k条斜线一共有S=1+2+3+……+k个数。</p>
+<p>第n项在哪条斜线上呢？只要找到一个最小的k，使得S≥n，那么第n项就是第k条斜线上倒数第S-n+1个数（最后一个元素是倒数第1个元素，而不是倒数第0个元素）。</p>
+<p>而k的奇偶决定着第k条斜线上数的顺序：若k是奇数，第k条斜线上倒数第i个元素是i/(k+1-i)；若k是偶数，第k条斜线上倒数第i个元素是(k+1-i)/i。</p>
+<h2 id="AC代码-4"><a href="#AC代码-4" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> n,h=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">while</span>(n-h&gt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        n=n-h;</span><br><span class="line">        h++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!h%<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;n&lt;&lt;<span class="string">"/"</span>&lt;&lt;h+<span class="number">1</span>-n&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;h+<span class="number">1</span>-n&lt;&lt;<span class="string">"/"</span>&lt;&lt;n&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="F-Telephone-Lines"><a href="#F-Telephone-Lines" class="headerlink" title="F-Telephone Lines"></a>F-Telephone Lines</h1><p><a href="https://ac.nowcoder.com/acm/contest/1069/F" target="_blank" rel="noopener">题目传送门</a></p>
+<h2 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h2><p>找出1-n的通路中，第<code>K+1</code>大的路径权值最小的值。</p>
+<h2 id="分析-5"><a href="#分析-5" class="headerlink" title="分析"></a>分析</h2><p>经典的二分+最短路解法。由于答案具有单调性，所以可以对其二分答案，若路径<code>i</code>的权值大于<code>mid</code>则为1，否则为0。然后进行找1到n的最短路。那么跑完最短路之后，由于小于<code>mid</code>的边权值均为0，1-n最短路的值就是路径上所有比<code>mid</code>大的边的总数。</p>
+<h2 id="AC代码-5"><a href="#AC代码-5" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> UINT;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAST_IO std::ios::sync_with_stdio(false),std::cin.tie(0),std::cout.tie(0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PAUSE system(<span class="meta-string">"pause"</span>)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> maxn = <span class="number">10000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> v, w, next;</span><br><span class="line">&#125;e[maxn &lt;&lt; <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> u;</span><br><span class="line">    <span class="keyword">int</span> w;</span><br><span class="line">    node(<span class="keyword">int</span> <span class="keyword">const</span> &amp;u = <span class="number">0</span>, <span class="keyword">int</span> <span class="keyword">const</span> &amp;w = <span class="number">0</span>) : </span><br><span class="line">        u(u), w(w) &#123;&#125;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> node &amp;p) <span class="keyword">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> w &gt; p.w;</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> head[maxn], vis[maxn];</span><br><span class="line"><span class="keyword">int</span> dis[maxn];</span><br><span class="line"><span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, k;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> w)</span> </span>&#123;</span><br><span class="line">    e[cnt].v = v;</span><br><span class="line">    e[cnt].w = w;</span><br><span class="line">    e[cnt].next = head[u];</span><br><span class="line">    head[u] = cnt++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dijkstra</span><span class="params">(<span class="keyword">int</span> mid)</span> </span>&#123;</span><br><span class="line">    priority_queue&lt;node&gt; q;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        dis[i] = INT_MAX;</span><br><span class="line">        vis[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    dis[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    q.push(node(<span class="number">1</span>, dis[<span class="number">1</span>]));</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u = q.top().u;</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span> (vis[u]) <span class="keyword">continue</span>;</span><br><span class="line">        vis[u] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = head[u]; ~i; i = e[i].next) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = e[i].v;</span><br><span class="line">            <span class="keyword">int</span> w = e[i].w &gt; mid ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (dis[v] &gt; dis[u] + w) &#123;</span><br><span class="line">                dis[v] = dis[u] + w;</span><br><span class="line">                q.push(node(v, dis[v]));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    FAST_IO;</span><br><span class="line">    <span class="built_in">memset</span>(head, <span class="number">-1</span>, <span class="keyword">sizeof</span>(head));</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; k;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> u, v, w;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v &gt;&gt; w;</span><br><span class="line">        r = max(r, w);</span><br><span class="line">        add(u, v, w);</span><br><span class="line">        add(v, u, w);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mx = r;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        dijkstra(mid);</span><br><span class="line">        <span class="keyword">if</span> (dis[n] &lt;= k) &#123;</span><br><span class="line">            r = mid;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (mx == r) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; r &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// PAUSE;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/ali.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">POJ</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">牛客</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">SegTree</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">位运算</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">综合</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -205,17 +274,113 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/28/nowcoder-team-contest08-solve-part/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/08/05/nowcoder_team_contest09_solve_part/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          牛客假日团队赛9-部分题解
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/07/20/TextOut/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">TextOut</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -238,9 +403,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
