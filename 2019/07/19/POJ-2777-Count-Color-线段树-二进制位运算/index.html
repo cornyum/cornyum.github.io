@@ -8,29 +8,29 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>POJ 2777 Count Color(线段树+二进制位运算) | Corn_yu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[TOC] DescriptionChosen Problem Solving and Program design as an optional course, you are required to solve all kinds of problems. Here, we get a new problem.  There is a very long board with length L">
+  <meta name="description" content="DescriptionChosen Problem Solving and Program design as an optional course, you are required to solve all kinds of problems. Here, we get a new problem.  There is a very long board with length L centi">
 <meta name="keywords" content="线段树,位运算">
 <meta property="og:type" content="article">
 <meta property="og:title" content="POJ 2777 Count Color(线段树+二进制位运算)">
 <meta property="og:url" content="http://yoursite.com/2019/07/19/POJ-2777-Count-Color-线段树-二进制位运算/index.html">
 <meta property="og:site_name" content="Corn_yu">
-<meta property="og:description" content="[TOC] DescriptionChosen Problem Solving and Program design as an optional course, you are required to solve all kinds of problems. Here, we get a new problem.  There is a very long board with length L">
+<meta property="og:description" content="DescriptionChosen Problem Solving and Program design as an optional course, you are required to solve all kinds of problems. Here, we get a new problem.  There is a very long board with length L centi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T10:20:10.227Z">
+<meta property="og:updated_time" content="2019-08-06T11:15:08.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POJ 2777 Count Color(线段树+二进制位运算)">
-<meta name="twitter:description" content="[TOC] DescriptionChosen Problem Solving and Program design as an optional course, you are required to solve all kinds of problems. Here, we get a new problem.  There is a very long board with length L">
+<meta name="twitter:description" content="DescriptionChosen Problem Solving and Program design as an optional course, you are required to solve all kinds of problems. Here, we get a new problem.  There is a very long board with length L centi">
   
     <link rel="alternative" href="/atom.xml" title="Corn_yu" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: linear-gradient(200deg, #C6FFDD,#FBD786, #f7797d);
     }
   </style>
   
@@ -44,7 +44,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: linear-gradient(to right, #43C6AC, #F8FFAE)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -95,7 +95,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: linear-gradient(to right, #43C6AC, #F8FFAE)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -165,8 +165,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>Chosen Problem Solving and Program design as an optional course, you are required to solve all kinds of problems. Here, we get a new problem. </p>
+        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>Chosen Problem Solving and Program design as an optional course, you are required to solve all kinds of problems. Here, we get a new problem. </p>
 <p>There is a very long board with length L centimeter, L is a positive integer, so we can evenly divide the board into L segments, and they are labeled by 1, 2, … L from left to right, each is 1 centimeter long. Now we have to color the board - one segment with only one color. We can do following two operations on the board: </p>
 <blockquote>
 <ol>
@@ -345,6 +344,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题意"><span class="toc-number">5.1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">5.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC代码"><span class="toc-number">5.3.</span> <span class="toc-text">AC代码</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -386,10 +398,10 @@
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
-		toc_hide_index: true,
+		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 

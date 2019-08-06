@@ -8,29 +8,29 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Device Context | Corn_yu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[TOC] Device Context 和 BeginPaint EndPaint设备环境（DC）在Windows中，一切能在显示器上看到的都是图形，不但包括点、线、矩形、圆等，也包括文字、字体。对用户来说文字和图片是不同的，但它们在本质上都是图形，都需要在显示器上画出来。这也是Windows被称作图形操作系统的原因。 Windows不允许我们直接访问硬件，如键盘、显示器、打印机等，在与这些硬件">
+  <meta name="description" content="Device Context 和 BeginPaint EndPaint设备环境（DC）在Windows中，一切能在显示器上看到的都是图形，不但包括点、线、矩形、圆等，也包括文字、字体。对用户来说文字和图片是不同的，但它们在本质上都是图形，都需要在显示器上画出来。这也是Windows被称作图形操作系统的原因。 Windows不允许我们直接访问硬件，如键盘、显示器、打印机等，在与这些硬件通信前要获得">
 <meta name="keywords" content="Windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Device Context">
 <meta property="og:url" content="http://yoursite.com/2019/07/19/Device-Context/index.html">
 <meta property="og:site_name" content="Corn_yu">
-<meta property="og:description" content="[TOC] Device Context 和 BeginPaint EndPaint设备环境（DC）在Windows中，一切能在显示器上看到的都是图形，不但包括点、线、矩形、圆等，也包括文字、字体。对用户来说文字和图片是不同的，但它们在本质上都是图形，都需要在显示器上画出来。这也是Windows被称作图形操作系统的原因。 Windows不允许我们直接访问硬件，如键盘、显示器、打印机等，在与这些硬件">
+<meta property="og:description" content="Device Context 和 BeginPaint EndPaint设备环境（DC）在Windows中，一切能在显示器上看到的都是图形，不但包括点、线、矩形、圆等，也包括文字、字体。对用户来说文字和图片是不同的，但它们在本质上都是图形，都需要在显示器上画出来。这也是Windows被称作图形操作系统的原因。 Windows不允许我们直接访问硬件，如键盘、显示器、打印机等，在与这些硬件通信前要获得">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T10:21:11.252Z">
+<meta property="og:updated_time" content="2019-08-06T11:15:08.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Device Context">
-<meta name="twitter:description" content="[TOC] Device Context 和 BeginPaint EndPaint设备环境（DC）在Windows中，一切能在显示器上看到的都是图形，不但包括点、线、矩形、圆等，也包括文字、字体。对用户来说文字和图片是不同的，但它们在本质上都是图形，都需要在显示器上画出来。这也是Windows被称作图形操作系统的原因。 Windows不允许我们直接访问硬件，如键盘、显示器、打印机等，在与这些硬件">
+<meta name="twitter:description" content="Device Context 和 BeginPaint EndPaint设备环境（DC）在Windows中，一切能在显示器上看到的都是图形，不但包括点、线、矩形、圆等，也包括文字、字体。对用户来说文字和图片是不同的，但它们在本质上都是图形，都需要在显示器上画出来。这也是Windows被称作图形操作系统的原因。 Windows不允许我们直接访问硬件，如键盘、显示器、打印机等，在与这些硬件通信前要获得">
   
     <link rel="alternative" href="/atom.xml" title="Corn_yu" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: linear-gradient(200deg, #C6FFDD,#FBD786, #f7797d);
     }
   </style>
   
@@ -44,7 +44,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: linear-gradient(to right, #43C6AC, #F8FFAE)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -95,7 +95,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: linear-gradient(to right, #43C6AC, #F8FFAE)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -165,8 +165,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="Device-Context-和-BeginPaint-EndPaint"><a href="#Device-Context-和-BeginPaint-EndPaint" class="headerlink" title="Device Context 和 BeginPaint EndPaint"></a>Device Context 和 BeginPaint EndPaint</h1><h1 id="设备环境（DC）"><a href="#设备环境（DC）" class="headerlink" title="设备环境（DC）"></a>设备环境（DC）</h1><p>在Windows中，一切能在显示器上看到的都是图形，不但包括点、线、矩形、圆等，也包括文字、字体。对用户来说文字和图片是不同的，但它们在本质上都是图形，都需要在显示器上画出来。这也是Windows被称作图形操作系统的原因。</p>
+        <h1 id="Device-Context-和-BeginPaint-EndPaint"><a href="#Device-Context-和-BeginPaint-EndPaint" class="headerlink" title="Device Context 和 BeginPaint EndPaint"></a>Device Context 和 BeginPaint EndPaint</h1><h1 id="设备环境（DC）"><a href="#设备环境（DC）" class="headerlink" title="设备环境（DC）"></a>设备环境（DC）</h1><p>在Windows中，一切能在显示器上看到的都是图形，不但包括点、线、矩形、圆等，也包括文字、字体。对用户来说文字和图片是不同的，但它们在本质上都是图形，都需要在显示器上画出来。这也是Windows被称作图形操作系统的原因。</p>
 <p>Windows不允许我们直接访问硬件，如键盘、显示器、打印机等，在与这些硬件通信前要获得<strong>设备环境（Device Context，简称 DC）</strong>，进而间接的访问硬件。</p>
 <blockquote>
 <p>设备环境有时也被称为设备上下文或设备描述表。</p>
@@ -310,6 +309,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Device-Context-和-BeginPaint-EndPaint"><span class="toc-number">1.</span> <span class="toc-text">Device Context 和 BeginPaint EndPaint</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设备环境（DC）"><span class="toc-number">2.</span> <span class="toc-text">设备环境（DC）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BeginPaint-和-EndPaint-函数"><span class="toc-number">3.</span> <span class="toc-text">BeginPaint 和 EndPaint 函数</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -351,10 +363,10 @@
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
-		toc_hide_index: true,
+		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 

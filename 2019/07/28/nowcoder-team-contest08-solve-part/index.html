@@ -8,29 +8,29 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>牛客假日团队赛8-部分题解 | Corn_yu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[TOC] 比赛总结暑期第一次打牛客团队赛，居然运气不错的就中奖了。不过这次的题总体都不难，差1题就可以AK了呢。还是来总结下吧，先附上算法大纲。  easy：B(模拟)、C(高精度)、G(排序)、H(BF)、I(规律题)、J(简单DP)、L(打表BF) mid：K(floyd传递闭包)、D(复杂模拟)、F(最短路+二分) hard：E(二分+并查集)、A(树形DP求最小支配集合)  其中蒟蒻的我">
+  <meta name="description" content="比赛总结暑期第一次打牛客团队赛，居然运气不错的就中奖了。不过这次的题总体都不难，差1题就可以AK了呢。还是来总结下吧，先附上算法大纲。  easy：B(模拟)、C(高精度)、G(排序)、H(BF)、I(规律题)、J(简单DP)、L(打表BF) mid：K(floyd传递闭包)、D(复杂模拟)、F(最短路+二分) hard：E(二分+并查集)、A(树形DP求最小支配集合)  其中蒟蒻的我写了BCGH">
 <meta name="keywords" content="暴力,最短路,数学,DP,模拟,二分,高精度">
 <meta property="og:type" content="article">
 <meta property="og:title" content="牛客假日团队赛8-部分题解">
 <meta property="og:url" content="http://yoursite.com/2019/07/28/nowcoder-team-contest08-solve-part/index.html">
 <meta property="og:site_name" content="Corn_yu">
-<meta property="og:description" content="[TOC] 比赛总结暑期第一次打牛客团队赛，居然运气不错的就中奖了。不过这次的题总体都不难，差1题就可以AK了呢。还是来总结下吧，先附上算法大纲。  easy：B(模拟)、C(高精度)、G(排序)、H(BF)、I(规律题)、J(简单DP)、L(打表BF) mid：K(floyd传递闭包)、D(复杂模拟)、F(最短路+二分) hard：E(二分+并查集)、A(树形DP求最小支配集合)  其中蒟蒻的我">
+<meta property="og:description" content="比赛总结暑期第一次打牛客团队赛，居然运气不错的就中奖了。不过这次的题总体都不难，差1题就可以AK了呢。还是来总结下吧，先附上算法大纲。  easy：B(模拟)、C(高精度)、G(排序)、H(BF)、I(规律题)、J(简单DP)、L(打表BF) mid：K(floyd传递闭包)、D(复杂模拟)、F(最短路+二分) hard：E(二分+并查集)、A(树形DP求最小支配集合)  其中蒟蒻的我写了BCGH">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T10:20:58.482Z">
+<meta property="og:updated_time" content="2019-08-06T11:15:08.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛客假日团队赛8-部分题解">
-<meta name="twitter:description" content="[TOC] 比赛总结暑期第一次打牛客团队赛，居然运气不错的就中奖了。不过这次的题总体都不难，差1题就可以AK了呢。还是来总结下吧，先附上算法大纲。  easy：B(模拟)、C(高精度)、G(排序)、H(BF)、I(规律题)、J(简单DP)、L(打表BF) mid：K(floyd传递闭包)、D(复杂模拟)、F(最短路+二分) hard：E(二分+并查集)、A(树形DP求最小支配集合)  其中蒟蒻的我">
+<meta name="twitter:description" content="比赛总结暑期第一次打牛客团队赛，居然运气不错的就中奖了。不过这次的题总体都不难，差1题就可以AK了呢。还是来总结下吧，先附上算法大纲。  easy：B(模拟)、C(高精度)、G(排序)、H(BF)、I(规律题)、J(简单DP)、L(打表BF) mid：K(floyd传递闭包)、D(复杂模拟)、F(最短路+二分) hard：E(二分+并查集)、A(树形DP求最小支配集合)  其中蒟蒻的我写了BCGH">
   
     <link rel="alternative" href="/atom.xml" title="Corn_yu" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: linear-gradient(200deg, #C6FFDD,#FBD786, #f7797d);
     }
   </style>
   
@@ -44,7 +44,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: linear-gradient(to right, #43C6AC, #F8FFAE)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -95,7 +95,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: linear-gradient(to right, #43C6AC, #F8FFAE)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -165,8 +165,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="比赛总结"><a href="#比赛总结" class="headerlink" title="比赛总结"></a>比赛总结</h1><p>暑期第一次打牛客团队赛，居然运气不错的就中奖了。不过这次的题总体都不难，差1题就可以AK了呢。<br>还是来总结下吧，先附上算法大纲。</p>
+        <h1 id="比赛总结"><a href="#比赛总结" class="headerlink" title="比赛总结"></a>比赛总结</h1><p>暑期第一次打牛客团队赛，居然运气不错的就中奖了。不过这次的题总体都不难，差1题就可以AK了呢。<br>还是来总结下吧，先附上算法大纲。</p>
 <ul>
 <li>easy：B(模拟)、C(高精度)、G(排序)、H(BF)、I(规律题)、J(简单DP)、L(打表BF)</li>
 <li>mid：K(floyd传递闭包)、D(复杂模拟)、F(最短路+二分)</li>
@@ -384,6 +383,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#比赛总结"><span class="toc-number">1.</span> <span class="toc-text">比赛总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#B-iCow"><span class="toc-number">2.</span> <span class="toc-text">B-iCow</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题意"><span class="toc-number">2.1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析"><span class="toc-number">2.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC代码"><span class="toc-number">2.3.</span> <span class="toc-text">AC代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C-阶乘之和"><span class="toc-number">3.</span> <span class="toc-text">C-阶乘之和</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析-1"><span class="toc-number">3.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC代码-1"><span class="toc-number">3.2.</span> <span class="toc-text">AC代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#G-Election-Time"><span class="toc-number">4.</span> <span class="toc-text">G-Election Time</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题意-1"><span class="toc-number">4.1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析-2"><span class="toc-number">4.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC代码-2"><span class="toc-number">4.3.</span> <span class="toc-text">AC代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#H-Costume-Party"><span class="toc-number">5.</span> <span class="toc-text">H-Costume Party</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析-3"><span class="toc-number">5.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC代码-3"><span class="toc-number">5.2.</span> <span class="toc-text">AC代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#I-Cantor表"><span class="toc-number">6.</span> <span class="toc-text">I-Cantor表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析-4"><span class="toc-number">6.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC代码-4"><span class="toc-number">6.2.</span> <span class="toc-text">AC代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#F-Telephone-Lines"><span class="toc-number">7.</span> <span class="toc-text">F-Telephone Lines</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题意-2"><span class="toc-number">7.1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析-5"><span class="toc-number">7.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC代码-5"><span class="toc-number">7.3.</span> <span class="toc-text">AC代码</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -425,10 +437,10 @@
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
-		toc_hide_index: true,
+		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
