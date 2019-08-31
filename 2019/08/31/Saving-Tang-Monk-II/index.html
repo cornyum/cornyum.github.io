@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Gemstones | Corn_yu</title>
+  <title>HihoCoder-1828 The 2018 ACM-ICPC Asia Beijing First Round  Saving Tang Monk II | Corn_yu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目来源：2019牛客暑期多校训练营（第八场）- G 题目描述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Gromah and LZR have entered the seventh level. There are a sequence of gemstones on the wall. &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;After some tries, Gromah di">
-<meta name="keywords" content="模拟,栈,贪心">
+  <meta name="description" content="题目链接 题目描述《Journey to the West》(also 《Monkey》) is one of the Four Great Classical Novels of Chinese literature. It was written by Wu Cheng’en during the Ming Dynasty. In this novel, Monkey King Sun Wuk">
+<meta name="keywords" content="bfs,优先队列">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Gemstones">
-<meta property="og:url" content="http://yoursite.com/2019/08/10/Gemstones/index.html">
+<meta property="og:title" content="HihoCoder-1828 The 2018 ACM-ICPC Asia Beijing First Round  Saving Tang Monk II">
+<meta property="og:url" content="http://yoursite.com/2019/08/31/Saving-Tang-Monk-II/index.html">
 <meta property="og:site_name" content="Corn_yu">
-<meta property="og:description" content="题目来源：2019牛客暑期多校训练营（第八场）- G 题目描述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Gromah and LZR have entered the seventh level. There are a sequence of gemstones on the wall. &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;After some tries, Gromah di">
+<meta property="og:description" content="题目链接 题目描述《Journey to the West》(also 《Monkey》) is one of the Four Great Classical Novels of Chinese literature. It was written by Wu Cheng’en during the Ming Dynasty. In this novel, Monkey King Sun Wuk">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-10T07:59:36.461Z">
+<meta property="og:updated_time" content="2019-08-31T12:47:06.321Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gemstones">
-<meta name="twitter:description" content="题目来源：2019牛客暑期多校训练营（第八场）- G 题目描述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Gromah and LZR have entered the seventh level. There are a sequence of gemstones on the wall. &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;After some tries, Gromah di">
+<meta name="twitter:title" content="HihoCoder-1828 The 2018 ACM-ICPC Asia Beijing First Round  Saving Tang Monk II">
+<meta name="twitter:description" content="题目链接 题目描述《Journey to the West》(also 《Monkey》) is one of the Four Great Classical Novels of Chinese literature. It was written by Wu Cheng’en during the Ming Dynasty. In this novel, Monkey King Sun Wuk">
   
     <link rel="alternative" href="/atom.xml" title="Corn_yu" type="application/atom+xml">
   
@@ -151,48 +151,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Gemstones" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Saving-Tang-Monk-II" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Gemstones
+      HihoCoder-1828 The 2018 ACM-ICPC Asia Beijing First Round  Saving Tang Monk II
     </h1>
   
 
         
-        <a href="/2019/08/10/Gemstones/" class="archive-article-date">
-  	<time datetime="2019-08-10T07:33:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
+        <a href="/2019/08/31/Saving-Tang-Monk-II/" class="archive-article-date">
+  	<time datetime="2019-08-31T12:33:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>题目来源：<a href="https://ac.nowcoder.com/acm/contest/888/G" target="_blank" rel="noopener">2019牛客暑期多校训练营（第八场）- G</a></p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;Gromah and LZR have entered the seventh level. There are a sequence of gemstones on the wall.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;After some tries, Gromah discovers that one can take exactly three successive gemstones with the same types away from the gemstone sequence each time, after taking away three gemstones, the left two parts of origin sequence will be merged to one sequence in origin order automatically.<br>&nbsp;&nbsp;&nbsp;&nbsp;For example, as for “$ATCCCTTG$”, we can take three ‘$C$’s away with two parts “$AT$”, “$TTG$” left, then the two parts will be merged to “$ATTTG$”, and we can take three ‘$T$’s next time.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;The password of this level is the maximum possible times to take gemstones from origin sequence.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Please help them to determine the <strong>maximum</strong> times.</p>
+        <p><a href="https://cn.vjudge.net/problem/HihoCoder-1828" target="_blank" rel="noopener">题目链接</a></p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>《Journey to the West》(also 《Monkey》) is one of the Four Great Classical Novels of Chinese literature. It was written by Wu Cheng’en during the Ming Dynasty. In this novel, Monkey King Sun Wukong, pig Zhu Bajie and Sha Wujing, escorted Tang Monk to India to get sacred Buddhism texts.</p>
 <a id="more"></a>
-
-<h1 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h1><blockquote>
-<p>Only one line containing $ a $ string $ s $ , denoting the gemstone sequence, where the same letters are regarded as the same types.<br>$ 1\leq \mid s \mid \leq 10^5 $.<br>$ s $ only contains uppercase letters.</p>
-</blockquote>
-<h1 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h1><blockquote>
-<p>Print a non-negative integer in a single line, denoting the maximum times.</p>
-</blockquote>
-<h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><blockquote>
-<p>ATCCCTTG</p>
-</blockquote>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><blockquote>
-<p>2</p>
-</blockquote>
-<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>取出字符串中相同且连续的三个字母，剩下的字符串拼接再次重负操作。求最大的课操作次数。</p>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>运用栈后进先出的性质，用栈贪心的模拟取出操作即可。本场多校赛签到题之一。</p>
-<h1 id="Solve-Code"><a href="#Solve-Code" class="headerlink" title="Solve Code"></a>Solve Code</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAST_IO ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> UINT;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> maxn = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> st[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    FAST_IO;</span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> s;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; s) &#123;</span><br><span class="line">        st[top++] = s;</span><br><span class="line">        <span class="keyword">if</span> (top &gt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (st[top - <span class="number">1</span>] == st[top - <span class="number">2</span>] &amp;&amp; st[top - <span class="number">1</span>] == st[top - <span class="number">3</span>]) &#123;</span><br><span class="line">                ans++;</span><br><span class="line">                top -= <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>During the journey, Tang Monk was often captured by demons. Most of demons wanted to eat Tang Monk to achieve immortality, but some female demons just wanted to marry him because he was handsome. So, fighting demons and saving Monk Tang is the major job for Sun Wukong to do.</p>
+<p>Once, Tang Monk was captured by the demon White Bones. White Bones lived in a palace and she cuffed Tang Monk in a room. Sun Wukong managed to get into the palace, and he wanted to reach Tang Monk and rescue him.</p>
+<p>The palace can be described as a matrix of characters. Different characters stand for different rooms as below:</p>
+<p>$’S’$ : The original position of Sun Wukong</p>
+<p>$’T’$ : The location of Tang Monk</p>
+<p>$’.’$ : An empty room</p>
+<p>‘#’ : A deadly gas room.</p>
+<p>$’B’$ : A room with unlimited number of oxygen bottles. Every time Sun Wukong entered a ‘B’ room from other rooms, he would get an oxygen bottle. But staying there would not get Sun Wukong more oxygen bottles. Sun Wukong could carry at most 5 oxygen bottles at the same time.</p>
+<p>$’P’$ : A room with unlimited number of speed-up pills. Every time Sun Wukong entered a ‘P’ room from other rooms, he would get a speed-up pill. But staying there would not get Sun Wukong more speed-up pills. Sun Wukong could bring unlimited number of speed-up pills with him.</p>
+<p>Sun Wukong could move in the palace. For each move, Sun Wukong might go to the adjacent rooms in 4 directions(north, west,south and east). But Sun Wukong couldn’t get into a ‘#’ room(deadly gas room) without an oxygen bottle. Entering a ‘#’ room each time would cost Sun Wukong one oxygen bottle.</p>
+<p>Each move took Sun Wukong one minute. But if Sun Wukong ate a speed-up pill, he could make next move without spending any time. In other words, each speed-up pill could save Sun Wukong one minute. And if Sun Wukong went into a ‘#’ room, he had to stay there for one extra minute to recover his health.</p>
+<p>Since Sun Wukong was an impatient monkey, he wanted to save Tang Monk as soon as possible. Please figure out the minimum time Sun Wukong needed to reach Tang Monk.</p>
+<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>根据题求最短步数，宽搜变形，优先级搜索</p>
+<ul>
+<li>S: 起点</li>
+<li>T: 重点</li>
+<li>‘.’: The empty room</li>
+<li>‘#’: 有毒的房间，需要氧气瓶，并且需要多一点时间</li>
+<li>P: 获得一个加速器，可以免去一个时间</li>
+<li>B: 一个氧气瓶，最多可以获得5个</li>
+</ul>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>本题需要剪枝，通过每一氧气瓶的数量记录状态，$vis[x][y][b_n]$。</p>
+<h1 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//#include &lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;array&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAST_IO ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) (x).begin(), (x).end()</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> UINT;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pdi;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll, <span class="keyword">int</span>&gt; pli;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> maxn = <span class="number">100</span> + <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lc</span><span class="params">(<span class="keyword">int</span> x)</span>  </span>&#123;<span class="keyword">return</span> x &lt;&lt; <span class="number">1</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rc</span><span class="params">(<span class="keyword">int</span> x)</span>  </span>&#123;<span class="keyword">return</span> x &lt;&lt; <span class="number">1</span> | <span class="number">1</span>;&#125;</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">char</span> mp[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> vis[maxn][maxn][<span class="number">10</span>];</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dir[<span class="number">4</span>][<span class="number">2</span>] = &#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> x, y, step, b;</span><br><span class="line">    node(<span class="keyword">const</span> <span class="keyword">int</span> &amp;x = <span class="number">0</span>, <span class="keyword">const</span> <span class="keyword">int</span> &amp;y = <span class="number">0</span>, <span class="keyword">const</span> <span class="keyword">int</span> &amp;step = <span class="number">0</span>, <span class="keyword">const</span> <span class="keyword">int</span> &amp;b = <span class="number">0</span>) </span><br><span class="line">        : x(x), y(y), step(step), b(b) &#123; &#125;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> node &amp;obj) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (step == obj.step) &#123;</span><br><span class="line">            <span class="keyword">return</span> b &lt; obj.b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> step &gt; obj.step;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt;= <span class="number">0</span> || x &gt; n || y &lt;= <span class="number">0</span> || y &gt; m) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    priority_queue&lt;node&gt; q;</span><br><span class="line">    q.push(node(x, y));</span><br><span class="line">    vis[x][y][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        node p = q.top();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span> (mp[p.x][p.y] == <span class="string">'T'</span>) </span><br><span class="line">            <span class="keyword">return</span> p.step;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tx = p.x + dir[i][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> ty = p.y + dir[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">int</span> tb = p.b;</span><br><span class="line">            <span class="keyword">int</span> ts = p.step + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (!check(tx, ty)) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span> (mp[tx][ty] == <span class="string">'P'</span>) &#123;</span><br><span class="line">                ts--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (mp[tx][ty] == <span class="string">'B'</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (tb &lt; <span class="number">5</span>) tb++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (mp[tx][ty] == <span class="string">'#'</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (tb &lt;= <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">                tb--;</span><br><span class="line">                ts++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (vis[tx][ty][tb]) <span class="keyword">continue</span>;</span><br><span class="line">            vis[tx][ty][tb] = <span class="number">1</span>;</span><br><span class="line">            q.push(node(tx, ty, ts, tb));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    FAST_IO;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span> &amp;&amp; m == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; (mp[i] + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> statr = <span class="number">-1</span>, end = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (mp[i][j] == <span class="string">'S'</span>) &#123;</span><br><span class="line">                    statr = i;</span><br><span class="line">                    end = j;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (statr != <span class="number">-1</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; bfs(statr, end) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -231,15 +235,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模拟</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bfs</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">优先队列</a>
         		</li>
       		
 		</ul>
@@ -255,15 +255,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ACM/牛客//" class="article-tag-list-link color3">牛客</a>
+        			<a href="/categories/ACM/题解//" class="article-tag-list-link color3">题解</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ACM/牛客/多校赛//" class="article-tag-list-link color4">多校赛</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM/牛客/多校赛/题解//" class="article-tag-list-link color3">题解</a>
+        			<a href="/categories/ACM/题解/2018ICPC北京//" class="article-tag-list-link color1">2018ICPC北京</a>
         		</li>
       		
 		</ul>
@@ -318,7 +314,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/10/Gemstones/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/31/Saving-Tang-Monk-II/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -332,18 +328,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/31/Saving-Tang-Monk-II/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          HihoCoder-1828 The 2018 ACM-ICPC Asia Beijing First Round  Saving Tang Monk II
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/06/LeetCode-19-Remove Nth Node From End of List/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode-19:删除链表的倒数第N个节点</div>
+    <a href="/2019/08/10/Gemstones/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Gemstones</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -370,7 +357,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#输入描述"><span class="toc-number">2.</span> <span class="toc-text">输入描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#输出描述"><span class="toc-number">3.</span> <span class="toc-text">输出描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Example"><span class="toc-number">4.</span> <span class="toc-text">Example</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">4.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">4.2.</span> <span class="toc-text">Output</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题意"><span class="toc-number">5.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分析"><span class="toc-number">6.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Solve-Code"><span class="toc-number">7.</span> <span class="toc-text">Solve Code</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题意"><span class="toc-number">2.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分析"><span class="toc-number">3.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AC代码"><span class="toc-number">4.</span> <span class="toc-text">AC代码</span></a></li></ol>
                     </div>
                 </span>
             </div>

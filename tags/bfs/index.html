@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Gemstones | Corn_yu</title>
+  <title>Tag: bfs | Corn_yu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目来源：2019牛客暑期多校训练营（第八场）- G 题目描述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Gromah and LZR have entered the seventh level. There are a sequence of gemstones on the wall. &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;After some tries, Gromah di">
-<meta name="keywords" content="模拟,栈,贪心">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Gemstones">
-<meta property="og:url" content="http://yoursite.com/2019/08/10/Gemstones/index.html">
+  <meta name="description" content="yuming&apos;s bolg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Corn_yu">
+<meta property="og:url" content="http://yoursite.com/tags/bfs/index.html">
 <meta property="og:site_name" content="Corn_yu">
-<meta property="og:description" content="题目来源：2019牛客暑期多校训练营（第八场）- G 题目描述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Gromah and LZR have entered the seventh level. There are a sequence of gemstones on the wall. &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;After some tries, Gromah di">
+<meta property="og:description" content="yuming&apos;s bolg">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-10T07:59:36.461Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gemstones">
-<meta name="twitter:description" content="题目来源：2019牛客暑期多校训练营（第八场）- G 题目描述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Gromah and LZR have entered the seventh level. There are a sequence of gemstones on the wall. &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;After some tries, Gromah di">
+<meta name="twitter:title" content="Corn_yu">
+<meta name="twitter:description" content="yuming&apos;s bolg">
   
     <link rel="alternative" href="/atom.xml" title="Corn_yu" type="application/atom+xml">
   
@@ -151,101 +149,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Gemstones" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Gemstones
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/08/31/Saving-Tang-Monk-II/" class="archive-article-date">
+  	<time datetime="2019-08-31T12:33:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-31</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/31/Saving-Tang-Monk-II/">HihoCoder-1828 The 2018 ACM-ICPC Asia Beijing First Round  Saving Tang Monk II</a>
     </h1>
   
 
-        
-        <a href="/2019/08/10/Gemstones/" class="archive-article-date">
-  	<time datetime="2019-08-10T07:33:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>题目来源：<a href="https://ac.nowcoder.com/acm/contest/888/G" target="_blank" rel="noopener">2019牛客暑期多校训练营（第八场）- G</a></p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;Gromah and LZR have entered the seventh level. There are a sequence of gemstones on the wall.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;After some tries, Gromah discovers that one can take exactly three successive gemstones with the same types away from the gemstone sequence each time, after taking away three gemstones, the left two parts of origin sequence will be merged to one sequence in origin order automatically.<br>&nbsp;&nbsp;&nbsp;&nbsp;For example, as for “$ATCCCTTG$”, we can take three ‘$C$’s away with two parts “$AT$”, “$TTG$” left, then the two parts will be merged to “$ATTTG$”, and we can take three ‘$T$’s next time.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;The password of this level is the maximum possible times to take gemstones from origin sequence.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Please help them to determine the <strong>maximum</strong> times.</p>
-<a id="more"></a>
-
-<h1 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h1><blockquote>
-<p>Only one line containing $ a $ string $ s $ , denoting the gemstone sequence, where the same letters are regarded as the same types.<br>$ 1\leq \mid s \mid \leq 10^5 $.<br>$ s $ only contains uppercase letters.</p>
-</blockquote>
-<h1 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h1><blockquote>
-<p>Print a non-negative integer in a single line, denoting the maximum times.</p>
-</blockquote>
-<h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><blockquote>
-<p>ATCCCTTG</p>
-</blockquote>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><blockquote>
-<p>2</p>
-</blockquote>
-<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>取出字符串中相同且连续的三个字母，剩下的字符串拼接再次重负操作。求最大的课操作次数。</p>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>运用栈后进先出的性质，用栈贪心的模拟取出操作即可。本场多校赛签到题之一。</p>
-<h1 id="Solve-Code"><a href="#Solve-Code" class="headerlink" title="Solve Code"></a>Solve Code</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAST_IO ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> UINT;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> maxn = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> st[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    FAST_IO;</span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> s;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; s) &#123;</span><br><span class="line">        st[top++] = s;</span><br><span class="line">        <span class="keyword">if</span> (top &gt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (st[top - <span class="number">1</span>] == st[top - <span class="number">2</span>] &amp;&amp; st[top - <span class="number">1</span>] == st[top - <span class="number">3</span>]) &#123;</span><br><span class="line">                ans++;</span><br><span class="line">                top -= <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/ali.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模拟</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bfs</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">优先队列</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -255,141 +204,28 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ACM/牛客//" class="article-tag-list-link color3">牛客</a>
+        			<a href="/categories/ACM/题解//" class="article-tag-list-link color3">题解</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ACM/牛客/多校赛//" class="article-tag-list-link color4">多校赛</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM/牛客/多校赛/题解//" class="article-tag-list-link color3">题解</a>
+        			<a href="/categories/ACM/题解/2018ICPC北京//" class="article-tag-list-link color1">2018ICPC北京</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/10/Gemstones/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/08/31/Saving-Tang-Monk-II/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          HihoCoder-1828 The 2018 ACM-ICPC Asia Beijing First Round  Saving Tang Monk II
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/08/06/LeetCode-19-Remove Nth Node From End of List/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode-19:删除链表的倒数第N个节点</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#输入描述"><span class="toc-number">2.</span> <span class="toc-text">输入描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#输出描述"><span class="toc-number">3.</span> <span class="toc-text">输出描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Example"><span class="toc-number">4.</span> <span class="toc-text">Example</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">4.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">4.2.</span> <span class="toc-text">Output</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题意"><span class="toc-number">5.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分析"><span class="toc-number">6.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Solve-Code"><span class="toc-number">7.</span> <span class="toc-text">Solve Code</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -412,9 +248,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
