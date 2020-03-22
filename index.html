@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Corn_yu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="yuming&apos;s bolg">
+  <meta name="description" content="yuming&#39;s bolg">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Corn_yu">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Corn_yu">
-<meta property="og:description" content="yuming&apos;s bolg">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="yuming&#39;s bolg">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="YuMing_Mov">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Corn_yu">
-<meta name="twitter:description" content="yuming&apos;s bolg">
   
     <link rel="alternative" href="/atom.xml" title="Corn_yu" type="application/atom+xml">
   
@@ -35,8 +34,8 @@
 
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -150,6 +149,180 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-[题解]Div2 2019下半学期周赛(四)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/22/%5B%E9%A2%98%E8%A7%A3%5DDiv2%202019%E4%B8%8B%E5%8D%8A%E5%AD%A6%E6%9C%9F%E5%91%A8%E8%B5%9B(%E5%9B%9B)/">Div2 2019下半学期周赛(四) 题解</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/22/%5B%E9%A2%98%E8%A7%A3%5DDiv2%202019%E4%B8%8B%E5%8D%8A%E5%AD%A6%E6%9C%9F%E5%91%A8%E8%B5%9B(%E5%9B%9B)/" class="archive-article-date">
+  	<time datetime="2020-03-22T13:27:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Div2-2019下半学期周赛-四-题解"><a href="#Div2-2019下半学期周赛-四-题解" class="headerlink" title="Div2 2019下半学期周赛(四) 题解"></a><center>Div2 2019下半学期周赛(四) 题解</center></h1><ul>
+<li><p>难度分布</p>
+  <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">简单：AGB</span><br><span class="line">中等：<span class="keyword">CF</span></span><br><span class="line">难：<span class="keyword">ED</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>总结</p>
+  <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A：签到</span><br><span class="line"><span class="keyword">B：贪心 </span>前缀和</span><br><span class="line">C：二分</span><br><span class="line">D：dp 前缀和</span><br><span class="line">E：数学暴力</span><br><span class="line">F：因子分解</span><br><span class="line">G：签到</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2020/03/22/%5B%E9%A2%98%E8%A7%A3%5DDiv2%202019%E4%B8%8B%E5%8D%8A%E5%AD%A6%E6%9C%9F%E5%91%A8%E8%B5%9B(%E5%9B%9B)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">二分</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">思维</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ACM/题解//" class="article-tag-list-link color3">题解</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ACM/题解/实验室//" class="article-tag-list-link color4">实验室</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/22/%5B%E9%A2%98%E8%A7%A3%5DDiv2%202019%E4%B8%8B%E5%8D%8A%E5%AD%A6%E6%9C%9F%E5%91%A8%E8%B5%9B(%E5%9B%9B)/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-200121" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/21/200121/">寒假练习（五） 最短路 线段树 差分约束</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/21/200121/" class="archive-article-date">
+  	<time datetime="2020-01-21T03:43:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/21/200121/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-200116" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -675,12 +848,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/06/LeetCode-19-Remove Nth Node From End of List/">Leetcode-19:删除链表的倒数第N个节点</a>
+      <a class="article-title" href="/2019/08/06/LeetCode-19-Remove%20Nth%20Node%20From%20End%20of%20List/">Leetcode-19:删除链表的倒数第N个节点</a>
     </h1>
   
 
         
-        <a href="/2019/08/06/LeetCode-19-Remove Nth Node From End of List/" class="archive-article-date">
+        <a href="/2019/08/06/LeetCode-19-Remove%20Nth%20Node%20From%20End%20of%20List/" class="archive-article-date">
   	<time datetime="2019-08-06T15:17:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
 </a>
         
@@ -694,7 +867,7 @@
 <p>给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.<br>当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.</p>
 </blockquote>
         
-          <a class="article-more-a" href="/2019/08/06/LeetCode-19-Remove Nth Node From End of List/#more">more >></a>
+          <a class="article-more-a" href="/2019/08/06/LeetCode-19-Remove%20Nth%20Node%20From%20End%20of%20List/#more">more >></a>
         
       
 
@@ -733,7 +906,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/06/LeetCode-19-Remove Nth Node From End of List/">展开 >></a>
+          <a class="article-more-a" href="/2019/08/06/LeetCode-19-Remove%20Nth%20Node%20From%20End%20of%20List/">展开 >></a>
         </p>
       
 
@@ -813,15 +986,15 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dfs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">暴力</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dfs</a>
         		</li>
       		
 		</ul>
@@ -938,11 +1111,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -1005,192 +1178,9 @@
 
 
   
-    <article id="post-TextOut" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/20/TextOut/">TextOut</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/20/TextOut/" class="archive-article-date">
-  	<time datetime="2019-07-20T11:42:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="TextOut"><a href="#TextOut" class="headerlink" title="TextOut"></a>TextOut</h1><h1 id="函数原型"><a href="#函数原型" class="headerlink" title="函数原型"></a>函数原型</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">TextOut</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    HDC hdc, <span class="comment">//设备环境句柄</span></span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="keyword">int</span> nXStart, <span class="comment">//开始输出位置的x坐标</span></span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="keyword">int</span> nYStart, <span class="comment">//开始输出位置的y坐标</span></span></span></span><br><span class="line"><span class="function"><span class="params">    LPCTSTR lpString, <span class="comment">//要输出的字符串</span></span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="keyword">int</span> cbString <span class="comment">//字符串的长度</span></span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span>;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/07/20/TextOut/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Windows</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/20/TextOut/">展开 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-POJ-2777-Count-Color-线段树-二进制位运算" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/19/POJ-2777-Count-Color-线段树-二进制位运算/">POJ 2777 Count Color(线段树+二进制位运算)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/19/POJ-2777-Count-Color-线段树-二进制位运算/" class="archive-article-date">
-  	<time datetime="2019-07-19T11:38:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>Chosen Problem Solving and Program design as an optional course, you are required to solve all kinds of problems. Here, we get a new problem. </p>
-<p>There is a very long board with length L centimeter, L is a positive integer, so we can evenly divide the board into L segments, and they are labeled by 1, 2, … L from left to right, each is 1 centimeter long. Now we have to color the board - one segment with only one color. We can do following two operations on the board: </p>
-<blockquote>
-<ol>
-<li>“C A B C” Color the board from segment A to segment B with color C. </li>
-<li>“P A B” Output the number of different colors painted between segment A and segment B (including). </li>
-</ol>
-</blockquote>
-<p>In our daily life, we have very few words to describe a color (red, green, blue, yellow…), so you may assume that the total number of different colors T is very small. To make it simple, we express the names of colors as color 1, color 2, … color T. At the beginning, the board was painted in color 1. Now the rest of problem is left to your. </p>
-        
-          <a class="article-more-a" href="/2019/07/19/POJ-2777-Count-Color-线段树-二进制位运算/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线段树</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">位运算</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM/题解/POJ//" class="article-tag-list-link color4">POJ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/19/POJ-2777-Count-Color-线段树-二进制位运算/">展开 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1314,11 +1304,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">搜索</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">状压</a>
+                <a href="javascript:void(0)" class="js-tag color4">-"最短路" -"搜索" -"水题" -"状压" -"差分" -"模拟" -"字符串"</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1334,39 +1320,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-"最短路" -"搜索" -"水题" -"状压" -"差分" -"模拟" -"字符串"</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
+                <a href="javascript:void(0)" class="js-tag color3">搜索</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+                <a href="javascript:void(0)" class="js-tag color3">状压</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">暴力</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">高精度</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1378,7 +1344,35 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">dfs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">暴力</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">高精度</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思维</a>
               </li>
             
             <div class="clearfix"></div>

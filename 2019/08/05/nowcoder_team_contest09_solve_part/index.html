@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>牛客假日团队赛9-部分题解 | Corn_yu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="A-乘积最大题目链接 题意&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;给定一个数字字符串，把字符串分成$K+1$个数，使这些数乘积最大。 分析本题最佳解法应该是区间dp但本蒟蒻不会dp。只能暴力dfs了。在串中插入*其性质和排列类似。可以参考蓝书P15递归实现排列型枚举。对于在第$i$个位置插入*分成$i$之前的为一段，及$i$和$i$之后一段。">
-<meta name="keywords" content="最短路,模拟,贪心,暴力,DP,dfs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="牛客假日团队赛9-部分题解">
 <meta property="og:url" content="http://yoursite.com/2019/08/05/nowcoder_team_contest09_solve_part/index.html">
 <meta property="og:site_name" content="Corn_yu">
 <meta property="og:description" content="A-乘积最大题目链接 题意&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;给定一个数字字符串，把字符串分成$K+1$个数，使这些数乘积最大。 分析本题最佳解法应该是区间dp但本蒟蒻不会dp。只能暴力dfs了。在串中插入*其性质和排列类似。可以参考蓝书P15递归实现排列型枚举。对于在第$i$个位置插入*分成$i$之前的为一段，及$i$和$i$之后一段。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-07T11:59:20.434Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-05T06:19:39.000Z">
+<meta property="article:modified_time" content="2019-08-07T11:59:20.434Z">
+<meta property="article:author" content="YuMing_Mov">
+<meta property="article:tag" content="最短路">
+<meta property="article:tag" content="模拟">
+<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="dfs">
+<meta property="article:tag" content="暴力">
+<meta property="article:tag" content="DP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="牛客假日团队赛9-部分题解">
-<meta name="twitter:description" content="A-乘积最大题目链接 题意&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;给定一个数字字符串，把字符串分成$K+1$个数，使这些数乘积最大。 分析本题最佳解法应该是区间dp但本蒟蒻不会dp。只能暴力dfs了。在串中插入*其性质和排列类似。可以参考蓝书P15递归实现排列型枚举。对于在第$i$个位置插入*分成$i$之前的为一段，及$i$和$i$之后一段。">
   
     <link rel="alternative" href="/atom.xml" title="Corn_yu" type="application/atom+xml">
   
@@ -37,8 +42,8 @@
 
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -189,7 +194,6 @@
 <li>比较好的做法可以先预处理一个$num$数组，其中$num[i][j]$表示串$i$和串$j$之间可以连接的字符数。在DFS的时候使用 $num[i][j]$ 进行回溯等操作。</li>
 </ol>
 <h2 id="AC代码-1"><a href="#AC代码-1" class="headerlink" title="AC代码"></a>AC代码</h2><h3 id="方法1-string暴力"><a href="#方法1-string暴力" class="headerlink" title="方法1(string暴力)"></a>方法1(string暴力)</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAST_IO ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> UINT;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> maxn = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">int</span> vis[maxn];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; v_str;</span><br><span class="line"><span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">string</span> &amp;s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (<span class="keyword">int</span>)v_str.size(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[i] &gt;= <span class="number">2</span>) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">string</span> &amp;ts = v_str[i];</span><br><span class="line">        <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> len1 = (<span class="keyword">int</span>)s.length();</span><br><span class="line">        <span class="keyword">int</span> len2 = (<span class="keyword">int</span>)ts.length();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; min(len1, len2); j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ts.substr(<span class="number">0</span>, j + <span class="number">1</span>) == s.substr(len1 - j - <span class="number">1</span>)) &#123;</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">                n = j + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n) &#123;</span><br><span class="line">            vis[i]++;</span><br><span class="line">            <span class="keyword">auto</span> temp = s;</span><br><span class="line">            s = s + ts.substr(n);</span><br><span class="line">            dfs(s);</span><br><span class="line">            s = temp;</span><br><span class="line">            vis[i]--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!flag) &#123;</span><br><span class="line">        ans = max((<span class="keyword">int</span>)s.length(), ans);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    FAST_IO;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">string</span> s;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">        v_str.push_back(s);</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">    dfs(s);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="方法2-预处理字符数"><a href="#方法2-预处理字符数" class="headerlink" title="方法2(预处理字符数)"></a>方法2(预处理字符数)</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">string</span> dc[<span class="number">25</span>];</span><br><span class="line"><span class="keyword">int</span> cd[<span class="number">25</span>][<span class="number">25</span>];</span><br><span class="line"><span class="keyword">int</span> cs[<span class="number">25</span>];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mincd</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">bool</span> p=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">int</span> ky=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=dc[x].size()<span class="number">-1</span>;k&gt;=<span class="number">0</span>;k--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> kx=k;kx&lt;dc[x].size();kx++)</span><br><span class="line">            <span class="keyword">if</span>(dc[x][kx]!=dc[y][ky++])</span><br><span class="line">            &#123;</span><br><span class="line">                p=<span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">         </span><br><span class="line">        <span class="keyword">if</span>(p==<span class="literal">true</span>)</span><br><span class="line">            <span class="keyword">return</span> dc[x].size()-k;</span><br><span class="line">         </span><br><span class="line">        ky=<span class="number">0</span>;</span><br><span class="line">        p=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">     </span><br><span class="line"><span class="keyword">char</span> sta;</span><br><span class="line"><span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> mans=<span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">bool</span> jx=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(cs[i]&gt;=<span class="number">2</span>) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span>(cd[p][i]==<span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span>(cd[p][i]==dc[p].size() || cd[p][i]==dc[i].size()) <span class="keyword">continue</span>;</span><br><span class="line">        mans+=dc[i].size()-cd[p][i];</span><br><span class="line">        cs[i]++;</span><br><span class="line">        jx=<span class="literal">true</span>;</span><br><span class="line">        dfs(i);   <span class="comment">//接上</span></span><br><span class="line">        mans-=dc[i].size()-cd[p][i];   <span class="comment">//回溯</span></span><br><span class="line">        cs[i]--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(jx==<span class="literal">false</span>)  </span><br><span class="line">    ans=max(ans,mans);</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;dc[i];</span><br><span class="line">     </span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;sta;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">            cd[i][j]=mincd(i,j);</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(dc[i][<span class="number">0</span>]==sta)&#123;</span><br><span class="line">            cs[i]++;</span><br><span class="line">            mans=dc[i].size();</span><br><span class="line">            dfs(i);</span><br><span class="line">            cs[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="D-Cow-Line"><a href="#D-Cow-Line" class="headerlink" title="D-Cow Line"></a>D-Cow Line</h1><p><a href="https://ac.nowcoder.com/acm/contest/1071/D" target="_blank" rel="noopener">题目链接</a></p>
@@ -220,7 +224,6 @@
 <h2 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h2><p>&emsp;&emsp;奶牛贝西和农夫约翰（FJ）玩捉迷藏，现在有N个谷仓，FJ开始在第一个谷仓，贝西为了不让FJ找到她，当然要藏在距离第一个谷仓最远的那个谷仓了。现在告诉你N个谷仓，和M个两两谷仓间的“无向边”。每两个仓谷间当然会有最短路径，现在要求距离第一个谷仓（FJ那里）最远的谷仓是哪个（所谓最远就是距离第一个谷仓最大的最短路径）？如有多个则输出编号最小的。以及求这最远距离是多少，和有几个这样的谷仓距离第一个谷仓那么远。</p>
 <h2 id="分析-5"><a href="#分析-5" class="headerlink" title="分析"></a>分析</h2><p>&emsp;&emsp;只要求出1-N的单源最短路，遍历找出最大值就可。因为本题所有边的边权全是1，所以只要从1开始bfs遍历图就行了。复杂度$O(N+M)$.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// C++的STL里有一些直接的简单算法可用（以下算法复杂度均为O(N)）：</span></span><br><span class="line"><span class="comment">//头文件 algorithm</span></span><br><span class="line">max_element(begin(), end(), cmp);  <span class="comment">//找到序列最大值，返回其指针</span></span><br><span class="line">min_element(begin(), end(), cmp); <span class="comment">//找到序列最小值，返回其指针</span></span><br><span class="line">count(begin(), end(), value) <span class="comment">//统计序列中为value值的个数</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="AC-代码"><a href="#AC-代码" class="headerlink" title="AC 代码"></a>AC 代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAST_IO ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> UINT;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> maxn = <span class="number">50000</span> + <span class="number">10</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> v, next;</span><br><span class="line">&#125;e[maxn &lt;&lt; <span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> head[maxn], cnt;</span><br><span class="line"><span class="keyword">int</span> dis[maxn], vis[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    e[cnt].v = v;</span><br><span class="line">    e[cnt].next = head[u];</span><br><span class="line">    head[u] = cnt++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; q;</span><br><span class="line">    dis[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    vis[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    q.push(make_pair(<span class="number">1</span>, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">auto</span> x = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">int</span> u = x.first;</span><br><span class="line">        dis[u] = x.second;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = head[u]; ~i; i = e[i].next) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = e[i].v;</span><br><span class="line">            <span class="keyword">if</span> (vis[v]) <span class="keyword">continue</span>;</span><br><span class="line">            vis[v] = <span class="number">1</span>;</span><br><span class="line">            q.push(make_pair(v, x.second + <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    FAST_IO;</span><br><span class="line">    <span class="built_in">memset</span>(head, <span class="number">-1</span>, <span class="keyword">sizeof</span>(head));</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> u, v;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; u &gt;&gt;v;</span><br><span class="line">        add(u, v);</span><br><span class="line">        add(v, u);</span><br><span class="line">    &#125;</span><br><span class="line">    bfs();</span><br><span class="line">    <span class="keyword">int</span> mx = *max_element(dis + <span class="number">1</span>, dis + <span class="number">1</span> + n);</span><br><span class="line">    <span class="keyword">int</span> cont = count(dis + <span class="number">1</span>, dis + <span class="number">1</span> + n, mx);</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (dis[i] == mx) &#123;</span><br><span class="line">            p = i;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="string">" "</span> &lt;&lt; mx &lt;&lt; <span class="string">" "</span> &lt;&lt; cont &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="L-回文数"><a href="#L-回文数" class="headerlink" title="L-回文数"></a>L-回文数</h1><p><a href="https://ac.nowcoder.com/acm/contest/1071/L" target="_blank" rel="noopener">题目链接</a></p>
@@ -276,15 +279,15 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dfs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">暴力</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dfs</a>
         		</li>
       		
 		</ul>
@@ -373,7 +376,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/06/LeetCode-19-Remove Nth Node From End of List/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/06/LeetCode-19-Remove%20Nth%20Node%20From%20End%20of%20List/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -552,11 +555,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">搜索</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">状压</a>
+                <a href="javascript:void(0)" class="js-tag color4">-"最短路" -"搜索" -"水题" -"状压" -"差分" -"模拟" -"字符串"</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,39 +571,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-"最短路" -"搜索" -"水题" -"状压" -"差分" -"模拟" -"字符串"</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
+                <a href="javascript:void(0)" class="js-tag color3">搜索</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+                <a href="javascript:void(0)" class="js-tag color3">状压</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">暴力</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">高精度</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,7 +595,35 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">dfs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">暴力</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">高精度</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思维</a>
               </li>
             
             <div class="clearfix"></div>

@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HDU-1978 How many ways | Corn_yu</title>
+  <title>Div2 2019下半学期周赛(四) 题解 | Corn_yu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述这是一个简单的生存游戏，你控制一个机器人从一个棋盘的起始点(1,1)走到棋盘的终点(n,m)。游戏的规则描述如下：1.机器人一开始在棋盘的起始点并有起始点所标有的能量。2.机器人只能向右或者向下走，并且每走一步消耗一单位能量。3.机器人不能在原地停留。4.当机器人选择了一条可行路径后，当他走到这条路径的终点时，他将只有终点所标记的能量。如上图，机器人一开始在(1,1)点，并拥有4单位能量，">
-<meta name="keywords" content="DP,搜索,记忆化">
+  <meta name="description" content="Div2 2019下半学期周赛(四) 题解 难度分布   123简单：AGB中等：CF难：ED  总结   1234567A：签到B：贪心 前缀和C：二分D：dp 前缀和E：数学暴力F：因子分解G：签到">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU-1978 How many ways">
-<meta property="og:url" content="http://yoursite.com/2019/09/27/HDU-1978/index.html">
+<meta property="og:title" content="Div2 2019下半学期周赛(四) 题解">
+<meta property="og:url" content="http://yoursite.com/2020/03/22/[%E9%A2%98%E8%A7%A3]Div2%202019%E4%B8%8B%E5%8D%8A%E5%AD%A6%E6%9C%9F%E5%91%A8%E8%B5%9B(%E5%9B%9B)/index.html">
 <meta property="og:site_name" content="Corn_yu">
-<meta property="og:description" content="题目描述这是一个简单的生存游戏，你控制一个机器人从一个棋盘的起始点(1,1)走到棋盘的终点(n,m)。游戏的规则描述如下：1.机器人一开始在棋盘的起始点并有起始点所标有的能量。2.机器人只能向右或者向下走，并且每走一步消耗一单位能量。3.机器人不能在原地停留。4.当机器人选择了一条可行路径后，当他走到这条路径的终点时，他将只有终点所标记的能量。如上图，机器人一开始在(1,1)点，并拥有4单位能量，">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://acm.hdu.edu.cn/data/images/C113-1003-1.gif">
-<meta property="og:updated_time" content="2019-09-25T03:33:51.991Z">
+<meta property="og:description" content="Div2 2019下半学期周赛(四) 题解 难度分布   123简单：AGB中等：CF难：ED  总结   1234567A：签到B：贪心 前缀和C：二分D：dp 前缀和E：数学暴力F：因子分解G：签到">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/03/22/[%E9%A2%98%E8%A7%A3]Div2%202019%E4%B8%8B%E5%8D%8A%E5%AD%A6%E6%9C%9F%E5%91%A8%E8%B5%9B(%E5%9B%9B)/1584774468555.png">
+<meta property="article:published_time" content="2020-03-22T13:27:52.000Z">
+<meta property="article:modified_time" content="2020-03-22T03:04:06.865Z">
+<meta property="article:author" content="YuMing_Mov">
+<meta property="article:tag" content="二分">
+<meta property="article:tag" content="DP">
+<meta property="article:tag" content="思维">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU-1978 How many ways">
-<meta name="twitter:description" content="题目描述这是一个简单的生存游戏，你控制一个机器人从一个棋盘的起始点(1,1)走到棋盘的终点(n,m)。游戏的规则描述如下：1.机器人一开始在棋盘的起始点并有起始点所标有的能量。2.机器人只能向右或者向下走，并且每走一步消耗一单位能量。3.机器人不能在原地停留。4.当机器人选择了一条可行路径后，当他走到这条路径的终点时，他将只有终点所标记的能量。如上图，机器人一开始在(1,1)点，并拥有4单位能量，">
-<meta name="twitter:image" content="http://acm.hdu.edu.cn/data/images/C113-1003-1.gif">
+<meta name="twitter:image" content="http://yoursite.com/2020/03/22/[%E9%A2%98%E8%A7%A3]Div2%202019%E4%B8%8B%E5%8D%8A%E5%AD%A6%E6%9C%9F%E5%91%A8%E8%B5%9B(%E5%9B%9B)/1584774468555.png">
   
     <link rel="alternative" href="/atom.xml" title="Corn_yu" type="application/atom+xml">
   
@@ -39,8 +41,8 @@
 
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -153,35 +155,105 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HDU-1978" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-[题解]Div2 2019下半学期周赛(四)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      HDU-1978 How many ways
+      Div2 2019下半学期周赛(四) 题解
     </h1>
   
 
         
-        <a href="/2019/09/27/HDU-1978/" class="archive-article-date">
-  	<time datetime="2019-09-27T03:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-27</time>
+        <a href="/2020/03/22/%5B%E9%A2%98%E8%A7%A3%5DDiv2%202019%E4%B8%8B%E5%8D%8A%E5%AD%A6%E6%9C%9F%E5%91%A8%E8%B5%9B(%E5%9B%9B)/" class="archive-article-date">
+  	<time datetime="2020-03-22T13:27:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>这是一个简单的生存游戏，你控制一个机器人从一个棋盘的起始点(1,1)走到棋盘的终点(n,m)。游戏的规则描述如下：<br>1.机器人一开始在棋盘的起始点并有起始点所标有的能量。<br>2.机器人只能向右或者向下走，并且每走一步消耗一单位能量。<br>3.机器人不能在原地停留。<br>4.当机器人选择了一条可行路径后，当他走到这条路径的终点时，他将只有终点所标记的能量。<br><img src="http://acm.hdu.edu.cn/data/images/C113-1003-1.gif" alt><br>如上图，机器人一开始在(1,1)点，并拥有4单位能量，蓝色方块表示他所能到达的点，如果他在这次路径选择中选择的终点是(2,4)</p>
+        <h1 id="Div2-2019下半学期周赛-四-题解"><a href="#Div2-2019下半学期周赛-四-题解" class="headerlink" title="Div2 2019下半学期周赛(四) 题解"></a><center>Div2 2019下半学期周赛(四) 题解</center></h1><ul>
+<li><p>难度分布</p>
+  <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">简单：AGB</span><br><span class="line">中等：<span class="keyword">CF</span></span><br><span class="line">难：<span class="keyword">ED</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>总结</p>
+  <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A：签到</span><br><span class="line"><span class="keyword">B：贪心 </span>前缀和</span><br><span class="line">C：二分</span><br><span class="line">D：dp 前缀和</span><br><span class="line">E：数学暴力</span><br><span class="line">F：因子分解</span><br><span class="line">G：签到</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
 <a id="more"></a>
-<p>点，当他到达(2,4)点时将拥有1单位的能量，并开始下一次路径选择，直到到达(6,6)点。<br>我们的问题是机器人有多少种方式从起点走到终点。这可能是一个很大的数，输出的结果对10000取模。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行输入一个整数T,表示数据的组数。<br>对于每一组数据第一行输入两个整数$n,m(1 \leq n,m \leq 100)$。表示棋盘的大小。接下来输入n行,每行m个整数$e(0 \leq e &lt; 20)$。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>对于每一组数据输出方式总数对10000取模的结果.</p>
-<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><p>1<br>6 6<br>4 5 6 6 4 3<br>2 2 3 1 7 2<br>1 1 4 6 2 7<br>5 8 4 3 9 5<br>7 6 6 2 1 5<br>3 1 1 3 7 2</p>
-<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><p>3948</p>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>如果使用最朴素的dfs对于 $20\ast20$ 的方阵其状态有$2^{20*20}$个，会超时。使用二维的$DP[i][j]$表示$第i行第j列$可行方案。对于每一个值为 $value$ 的方格，其可衍生的最大范围是$value$为边的等腰直角三角形，则初始边界条件为$dp[x][y] = -1$ ，可以得到方程。$dp[x][y] = dp[x][y] + dp[x + i][y + j]$ </p>
-<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//#include &lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;array&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAST_IO ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) (x).begin(), (x).end()</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> UINT;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pdi;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll, <span class="keyword">int</span>&gt; pli;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> maxn = <span class="number">100</span> + <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lc</span><span class="params">(<span class="keyword">int</span> x)</span>  </span>&#123;<span class="keyword">return</span> x &lt;&lt; <span class="number">1</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rc</span><span class="params">(<span class="keyword">int</span> x)</span>  </span>&#123;<span class="keyword">return</span> x &lt;&lt; <span class="number">1</span> | <span class="number">1</span>;&#125;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> MOD = <span class="number">10000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> dp[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; n || y &gt; m) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (dp[x][y] &gt;= <span class="number">0</span>) <span class="keyword">return</span> dp[x][y];</span><br><span class="line">    dp[x][y] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= a[x][y]; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j + i &lt;= a[x][y]; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (check(x + i, y + j)) &#123;</span><br><span class="line">                dp[x][y] += dfs(x + i, y + j) % MOD;</span><br><span class="line">                dp[x][y] %= MOD;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[x][y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    FAST_IO;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123;</span><br><span class="line">                <span class="built_in">cin</span> &gt;&gt; a[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">memset</span>(dp, <span class="number">-1</span>, <span class="keyword">sizeof</span>(dp));</span><br><span class="line">        dp[n][m] = <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; dfs(<span class="number">1</span>, <span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="A-我是最简单的QwQ-CF931A"><a href="#A-我是最简单的QwQ-CF931A" class="headerlink" title="A-我是最简单的QwQ-CF931A"></a>A-我是最简单的QwQ-CF931A</h2><p>签到题。由于 m 和 n都&lt;=1e8。</p>
+<p>若当$2^n &gt; 1e8$的时候，答案就是m，否则计算$m%2^n$。</p>
+<p>通过对二进制的了解。当$n&gt;30$的时候$2^n$必定大于1e8。</p>
+<ul>
+<li>使用位运算可以加快并减少代码</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>, n &gt;= <span class="number">30</span> ? m : m % (<span class="number">1</span> &lt;&lt; n));</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：$O(1)$</p>
+<ul>
+<li>PS：万万想不到cmath的<code>pow</code>居然可行。估计这场<code>codeforces​</code>的出题人也没想到。虽然可以pow过但大家还是少用的好（毕竟有玄学成分）。</li>
+</ul>
+<h2 id="B-小明的期末考试-CF1322A"><a href="#B-小明的期末考试-CF1322A" class="headerlink" title="B-小明的期末考试-CF1322A"></a>B-小明的期末考试-CF1322A</h2><p>用前面学习栈的时候的括号匹配的思想。</p>
+<p>首先如果左括号和右括号不相等，那么肯定没法完成目标。</p>
+<p>如果相等，设立一个游标<code>p</code>，初始化为0，如果遇到左括号就<code>p++</code>，遇到右括号<code>p--</code>。</p>
+<ul>
+<li><p>以p变为0的时候为分割线分成若干个字串。</p>
+</li>
+<li><p>如果某个字串是<code>p</code>正的变为<code>0</code>的，那么就是正常的括号匹配，比如 <code>“(()())”</code></p>
+</li>
+<li><p>如果某个字串<code>p</code>负的变为<code>0</code>的，那么就要对这个字串进行重新排序，比如<code>“))((</code>”需要变成<code>”(())”</code>，此操作的代价是花费字符串长度所需的时间。</p>
+</li>
+</ul>
+<p>时间复杂度：$O(n)$</p>
+<h2 id="C-corn的增肥计划-POJ3273"><a href="#C-corn的增肥计划-POJ3273" class="headerlink" title="C-corn的增肥计划-POJ3273"></a>C-corn的增肥计划-POJ3273</h2><p>题意解析：按照题意把序列$v$分成m段，并且使得$sum(seg[i]_{1&lt;=i&lt;=m})$最小。即最小化最大值。</p>
+<p>我们可以枚举答案$ans$然后通过$O(n)$复杂度模拟分段的过程，逼近ans。如果最后的段数$seg \leq m$，则表示$ans$可以继续缩小找到更小的答案，如果$seg&gt;m$，则表示$ans$的值需要增大。</p>
+<p>暴力从小开始枚举$ans$在1s的时间内无法完成。所以我们采用二分ans的方式，其中$check$函数复杂度$O(n)$。</p>
+<p>二分上下界分别为：$max_{1 \leq i \leq n}(v[i])$ 和 $sum_{1 \leq i \leq n}(v[i])$</p>
+<p>所以总的时间复杂度：$O(n*log_2^{sum_{1 \leq i \leq n}(v[i])})$</p>
+<h2 id="D-兔子奇特的吃草技巧-CF474D"><a href="#D-兔子奇特的吃草技巧-CF474D" class="headerlink" title="D-兔子奇特的吃草技巧-CF474D"></a>D-兔子奇特的吃草技巧-CF474D</h2><p>有两种吃草技巧，<code>吃一根，吃k根</code></p>
+<p>看到这里我们应该能得到一个转移公式</p>
+<ul>
+<li><p>$i&lt;k$时 $dp[i]=dp[i-1]$     </p>
+</li>
+<li><p>$i&gt;=k$时  $dp[i]=dp[i-1]+dp[i-k]$</p>
+</li>
+</ul>
+<p>这样我们就可以先预处理出$i$根草时的不同吃法有$dp[i]$种</p>
+<p>再观察数据，询问次数有1e5次，如果每次$[l,r]$的加过去无疑会$TLE$，最差$o(1e5^2)$的复杂度   所以要再前缀和预处理一下（这里前缀和取模有一点细节操作，因为都取模了<code>1e9+7</code>所以可能后面的数据会比前面的小，所以最后应该再加上一个mod再取余）</p>
+<p>所以要再前缀和预处理一下 $O(1)$查询。</p>
+<h2 id="E-奇怪的知识增加了-CF550C"><a href="#E-奇怪的知识增加了-CF550C" class="headerlink" title="E-奇怪的知识增加了-CF550C"></a>E-奇怪的知识增加了-CF550C</h2><p>首先看到数据范围，大家应该都用的字符串吧，长度100的字符串。</p>
+<p>然后我们再看张图，学一些奇怪的知识（结论）。</p>
+<img src="1584774468555.png" alt="数学结论" style="zoom: 70%;" />
+
+<p>看到这张图，大家应该就知道怎么做了，只要for三层遍历其中是否有 3位 或 2位 或 1位 能够整除8, 能整出就yes输出并退出，三层循环外面在写个no就好了。</p>
+<p>本题主要是数学结论和暴力。</p>
+<p>时间复杂度：$O(len(s)^3)$</p>
+<h2 id="F-小公举的自信日常-CF150A"><a href="#F-小公举的自信日常-CF150A" class="headerlink" title="F-小公举的自信日常-CF150A"></a>F-小公举的自信日常-CF150A</h2><p>这题主要是运用 算数基本定理 ： 任何一个大于1的自然数 N,如果N不为质数，那么N可以唯一分解成有限个质数的乘积。知道这个定理后，我们令输入的数可以被拆分为X个质数相乘。</p>
+<ul>
+<li><p>当X大于等于3时 ： 先手胜，取出的数为X个中任取两个因子相乘即可；</p>
+</li>
+<li><p>当X等于2时     ： 后手胜；</p>
+</li>
+<li><p>当X等于1时     ： 先手胜，因为不能取出所以输出0；</p>
+</li>
+</ul>
+<p>sqrt(n)的时间复杂度，分解因子即可。</p>
+<p>时间复杂度：$O(sqrt(n))$</p>
+<h2 id="G-无聊的小公举-CF1325B"><a href="#G-无聊的小公举-CF1325B" class="headerlink" title="G-无聊的小公举-CF1325B"></a>G-无聊的小公举-CF1325B</h2><p>签到题。</p>
+<p>这题的序列最好情况就是序列本身就是递增序列，就不用拼接，输出序列长度即可。如：</p>
+<p>1 2 3 4 5 6 7 8 9 答案就是9；</p>
+<p>最坏的情况就是序列本身是递减序列，这样为了把每一个数都用上我们就需要拼接n（n为原序列的长度）个序列。如：</p>
+<p><code>4 3 2 1</code>就需要拼接成 4 3 2 <strong>1</strong> 4 3 <strong>2</strong> 1 4 <strong>3</strong> 2 1 <strong>4</strong> 3 2 1 加粗字体为最长递增序列。</p>
+<p>所以这题就是求出原序列中不同的数字有几个。</p>
+<p>利用<code>set</code>自动去重的特性，保存一下数字，输出set中个数即可。</p>
+<p>时间复杂度：$O(nlogn)$</p>
+
       
 
       
@@ -220,15 +292,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">二分</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">搜索</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">记忆化</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">思维</a>
         		</li>
       		
 		</ul>
@@ -245,6 +317,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="/categories/ACM/题解//" class="article-tag-list-link color3">题解</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ACM/题解/实验室//" class="article-tag-list-link color4">实验室</a>
         		</li>
       		
 		</ul>
@@ -299,7 +375,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/27/HDU-1978/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/22/[%E9%A2%98%E8%A7%A3]Div2%202019%E4%B8%8B%E5%8D%8A%E5%AD%A6%E6%9C%9F%E5%91%A8%E8%B5%9B(%E5%9B%9B)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,8 +390,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/08/31/Saving-Tang-Monk-II/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HihoCoder-1828 The 2018 ACM-ICPC Asia Beijing First Round  Saving Tang Monk II</div>
+    <a href="/2020/01/21/200121/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">寒假练习（五） 最短路 线段树 差分约束</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -342,7 +418,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输入样例"><span class="toc-number">1.3.</span> <span class="toc-text">输入样例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出样例"><span class="toc-number">1.4.</span> <span class="toc-text">输出样例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析"><span class="toc-number">1.5.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC代码"><span class="toc-number">1.6.</span> <span class="toc-text">AC代码</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Div2-2019下半学期周赛-四-题解"><span class="toc-number">1.</span> <span class="toc-text">Div2 2019下半学期周赛(四) 题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-我是最简单的QwQ-CF931A"><span class="toc-number">1.1.</span> <span class="toc-text">A-我是最简单的QwQ-CF931A</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-小明的期末考试-CF1322A"><span class="toc-number">1.2.</span> <span class="toc-text">B-小明的期末考试-CF1322A</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-corn的增肥计划-POJ3273"><span class="toc-number">1.3.</span> <span class="toc-text">C-corn的增肥计划-POJ3273</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-兔子奇特的吃草技巧-CF474D"><span class="toc-number">1.4.</span> <span class="toc-text">D-兔子奇特的吃草技巧-CF474D</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#E-奇怪的知识增加了-CF550C"><span class="toc-number">1.5.</span> <span class="toc-text">E-奇怪的知识增加了-CF550C</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#F-小公举的自信日常-CF150A"><span class="toc-number">1.6.</span> <span class="toc-text">F-小公举的自信日常-CF150A</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#G-无聊的小公举-CF1325B"><span class="toc-number">1.7.</span> <span class="toc-text">G-无聊的小公举-CF1325B</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -371,7 +447,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 YuMing_Mov
+    		&copy; 2020 YuMing_Mov
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -475,7 +551,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color4">最短路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">二分</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-"最短路" -"搜索" -"水题" -"状压" -"差分" -"模拟" -"字符串"</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -491,7 +575,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,19 +583,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">记忆化</a>
+                <a href="javascript:void(0)" class="js-tag color3">状压</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,11 +599,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">dfs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">暴力</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">最短路</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,15 +623,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">二分</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">高精度</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">dfs</a>
+                <a href="javascript:void(0)" class="js-tag color3">思维</a>
               </li>
             
             <div class="clearfix"></div>
