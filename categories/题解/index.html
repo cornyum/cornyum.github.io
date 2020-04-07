@@ -6,20 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HihoCoder-1828 The 2018 ACM-ICPC Asia Beijing First Round  Saving Tang Monk II | Corn_yu</title>
+  <title>Category: 题解 | Corn_yu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目链接 题目描述《Journey to the West》(also 《Monkey》) is one of the Four Great Classical Novels of Chinese literature. It was written by Wu Cheng’en during the Ming Dynasty. In this novel, Monkey King Sun Wuk">
-<meta property="og:type" content="article">
-<meta property="og:title" content="HihoCoder-1828 The 2018 ACM-ICPC Asia Beijing First Round  Saving Tang Monk II">
-<meta property="og:url" content="http://yoursite.com/2019/08/31/Saving-Tang-Monk-II/index.html">
+  <meta name="description" content="yuming&#39;s bolg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Corn_yu">
+<meta property="og:url" content="http://yoursite.com/categories/%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Corn_yu">
-<meta property="og:description" content="题目链接 题目描述《Journey to the West》(also 《Monkey》) is one of the Four Great Classical Novels of Chinese literature. It was written by Wu Cheng’en during the Ming Dynasty. In this novel, Monkey King Sun Wuk">
+<meta property="og:description" content="yuming&#39;s bolg">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-08-31T12:33:34.000Z">
-<meta property="article:modified_time" content="2019-08-31T12:47:06.321Z">
 <meta property="article:author" content="YuMing_Mov">
-<meta property="article:tag" content="bfs">
-<meta property="article:tag" content="优先队列">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Corn_yu" type="application/atom+xml">
@@ -152,241 +148,83 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Saving-Tang-Monk-II" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      HihoCoder-1828 The 2018 ACM-ICPC Asia Beijing First Round  Saving Tang Monk II
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/04/07/nowcoder0407/" class="archive-article-date">
+  	<time datetime="2020-04-07T14:59:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/04/07/nowcoder0407/">牛客算法周周练1</a>
     </h1>
   
 
-        
-        <a href="/2019/08/31/Saving-Tang-Monk-II/" class="archive-article-date">
-  	<time datetime="2019-08-31T12:33:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://cn.vjudge.net/problem/HihoCoder-1828" target="_blank" rel="noopener">题目链接</a></p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>《Journey to the West》(also 《Monkey》) is one of the Four Great Classical Novels of Chinese literature. It was written by Wu Cheng’en during the Ming Dynasty. In this novel, Monkey King Sun Wukong, pig Zhu Bajie and Sha Wujing, escorted Tang Monk to India to get sacred Buddhism texts.</p>
-<a id="more"></a>
-<p>During the journey, Tang Monk was often captured by demons. Most of demons wanted to eat Tang Monk to achieve immortality, but some female demons just wanted to marry him because he was handsome. So, fighting demons and saving Monk Tang is the major job for Sun Wukong to do.</p>
-<p>Once, Tang Monk was captured by the demon White Bones. White Bones lived in a palace and she cuffed Tang Monk in a room. Sun Wukong managed to get into the palace, and he wanted to reach Tang Monk and rescue him.</p>
-<p>The palace can be described as a matrix of characters. Different characters stand for different rooms as below:</p>
-<p>$’S’$ : The original position of Sun Wukong</p>
-<p>$’T’$ : The location of Tang Monk</p>
-<p>$’.’$ : An empty room</p>
-<p>‘#’ : A deadly gas room.</p>
-<p>$’B’$ : A room with unlimited number of oxygen bottles. Every time Sun Wukong entered a ‘B’ room from other rooms, he would get an oxygen bottle. But staying there would not get Sun Wukong more oxygen bottles. Sun Wukong could carry at most 5 oxygen bottles at the same time.</p>
-<p>$’P’$ : A room with unlimited number of speed-up pills. Every time Sun Wukong entered a ‘P’ room from other rooms, he would get a speed-up pill. But staying there would not get Sun Wukong more speed-up pills. Sun Wukong could bring unlimited number of speed-up pills with him.</p>
-<p>Sun Wukong could move in the palace. For each move, Sun Wukong might go to the adjacent rooms in 4 directions(north, west,south and east). But Sun Wukong couldn’t get into a ‘#’ room(deadly gas room) without an oxygen bottle. Entering a ‘#’ room each time would cost Sun Wukong one oxygen bottle.</p>
-<p>Each move took Sun Wukong one minute. But if Sun Wukong ate a speed-up pill, he could make next move without spending any time. In other words, each speed-up pill could save Sun Wukong one minute. And if Sun Wukong went into a ‘#’ room, he had to stay there for one extra minute to recover his health.</p>
-<p>Since Sun Wukong was an impatient monkey, he wanted to save Tang Monk as soon as possible. Please figure out the minimum time Sun Wukong needed to reach Tang Monk.</p>
-<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>根据题求最短步数，宽搜变形，优先级搜索</p>
-<ul>
-<li>S: 起点</li>
-<li>T: 重点</li>
-<li>‘.’: The empty room</li>
-<li>‘#’: 有毒的房间，需要氧气瓶，并且需要多一点时间</li>
-<li>P: 获得一个加速器，可以免去一个时间</li>
-<li>B: 一个氧气瓶，最多可以获得5个</li>
-</ul>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>本题需要剪枝，通过每一氧气瓶的数量记录状态，$vis[x][y][b_n]$。</p>
-<h1 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//#include &lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;array&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FAST_IO ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(x) (x).begin(), (x).end()</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> UINT;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pdi;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll, <span class="keyword">int</span>&gt; pli;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> maxn = <span class="number">100</span> + <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lc</span><span class="params">(<span class="keyword">int</span> x)</span>  </span>&#123;<span class="keyword">return</span> x &lt;&lt; <span class="number">1</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rc</span><span class="params">(<span class="keyword">int</span> x)</span>  </span>&#123;<span class="keyword">return</span> x &lt;&lt; <span class="number">1</span> | <span class="number">1</span>;&#125;</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">char</span> mp[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> vis[maxn][maxn][<span class="number">10</span>];</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dir[<span class="number">4</span>][<span class="number">2</span>] = &#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> x, y, step, b;</span><br><span class="line">    node(<span class="keyword">const</span> <span class="keyword">int</span> &amp;x = <span class="number">0</span>, <span class="keyword">const</span> <span class="keyword">int</span> &amp;y = <span class="number">0</span>, <span class="keyword">const</span> <span class="keyword">int</span> &amp;step = <span class="number">0</span>, <span class="keyword">const</span> <span class="keyword">int</span> &amp;b = <span class="number">0</span>) </span><br><span class="line">        : x(x), y(y), step(step), b(b) &#123; &#125;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> node &amp;obj) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (step == obj.step) &#123;</span><br><span class="line">            <span class="keyword">return</span> b &lt; obj.b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> step &gt; obj.step;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt;= <span class="number">0</span> || x &gt; n || y &lt;= <span class="number">0</span> || y &gt; m) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    priority_queue&lt;node&gt; q;</span><br><span class="line">    q.push(node(x, y));</span><br><span class="line">    vis[x][y][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        node p = q.top();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span> (mp[p.x][p.y] == <span class="string">'T'</span>) </span><br><span class="line">            <span class="keyword">return</span> p.step;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tx = p.x + dir[i][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> ty = p.y + dir[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">int</span> tb = p.b;</span><br><span class="line">            <span class="keyword">int</span> ts = p.step + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (!check(tx, ty)) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span> (mp[tx][ty] == <span class="string">'P'</span>) &#123;</span><br><span class="line">                ts--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (mp[tx][ty] == <span class="string">'B'</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (tb &lt; <span class="number">5</span>) tb++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (mp[tx][ty] == <span class="string">'#'</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (tb &lt;= <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">                tb--;</span><br><span class="line">                ts++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (vis[tx][ty][tb]) <span class="keyword">continue</span>;</span><br><span class="line">            vis[tx][ty][tb] = <span class="number">1</span>;</span><br><span class="line">            q.push(node(tx, ty, ts, tb));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    FAST_IO;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span> &amp;&amp; m == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; (mp[i] + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> statr = <span class="number">-1</span>, end = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (mp[i][j] == <span class="string">'S'</span>) &#123;</span><br><span class="line">                    statr = i;</span><br><span class="line">                    end = j;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (statr != <span class="number">-1</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; bfs(statr, end) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/ali.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bfs</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">打表</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">优先队列</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">前缀和</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LCA</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ACM//" class="article-tag-list-link color4">ACM</a>
+        			<a href="/categories/题解//" class="article-tag-list-link color3">题解</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/ACM/题解//" class="article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ACM/题解/2018ICPC北京//" class="article-tag-list-link color1">2018ICPC北京</a>
+        			<a href="/categories/题解/ACM//" class="article-tag-list-link color4">ACM</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/31/Saving-Tang-Monk-II/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/01/11/200111/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          寒假练习（一）最短路和二分
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/08/10/Gemstones/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Gemstones</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题意"><span class="toc-number">2.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分析"><span class="toc-number">3.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AC代码"><span class="toc-number">4.</span> <span class="toc-text">AC代码</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -409,10 +247,10 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: false,
 		toc_hide_index: false,
 		root: "/",
